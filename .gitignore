@@ -1,0 +1,9 @@
+node_modules/
+out/
+models/
+__pycache__/
+*.pyc
+
+# generated per episode by gen_voice.py
+public/voice.wav
+public/timeline.json

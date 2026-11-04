@@ -1,0 +1,15 @@
+[
+  {
+    "id": "airline-overbooking",
+    "title": "Why airlines sell more tickets than seats",
+    "beats": [
+      { "scene": "hook", "text": "Airlines sell more tickets than there are seats. On purpose." },
+      { "scene": "perishable", "text": "Why? Because a seat is perishable. Once the plane takes off, an empty seat earns nothing, ever." },
+      { "scene": "noshow", "text": "And on every flight, some passengers simply don't show up. Missed connections, changed plans, traffic." },
+      { "scene": "data", "text": "So airlines use years of data to predict no-shows, route by route, even day by day." },
+      { "scene": "extra", "text": "Then they sell a few extra tickets to cover the gap. Most of the time, the math works." },
+      { "scene": "volunteers", "text": "When it doesn't, they offer money to volunteers, and raise the offer until someone says yes. It's still cheaper than an empty seat." },
+      { "scene": "payoff", "text": "That's the mechanism. Overbooking isn't a mistake. It's a bet on human unreliability." }
+    ]
+  }
+]
