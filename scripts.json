@@ -2,6 +2,8 @@
   {
     "id": "airline-overbooking",
     "title": "Why airlines sell more tickets than seats",
+    "template": "custom",
+    "status": "rendered",
     "beats": [
       { "scene": "hook", "text": "Airlines sell more tickets than there are seats. On purpose." },
       { "scene": "perishable", "text": "Why? Because a seat is perishable. Once the plane takes off, an empty seat earns nothing, ever." },
@@ -10,6 +12,156 @@
       { "scene": "extra", "text": "Then they sell a few extra tickets to cover the gap. Most of the time, the math works." },
       { "scene": "volunteers", "text": "When it doesn't, they offer money to volunteers, and raise the offer until someone says yes. It's still cheaper than an empty seat." },
       { "scene": "payoff", "text": "That's the mechanism. Overbooking isn't a mistake. It's a bet on human unreliability." }
+    ]
+  },
+  {
+    "id": "airline-fare-buckets",
+    "title": "Why the same airline seat has different prices",
+    "template": "generic",
+    "status": "script-ready",
+    "beats": [
+      { "scene": "text", "text": "Two passengers on the same flight can pay very different prices for the same seat.",
+        "data": { "lines": ["Same flight.", "Same seat.", "Different price."] } },
+      { "scene": "steps", "text": "That's because airlines don't set one price per flight. They split the cabin into fare buckets, around twenty of them, each with its own price and rules.",
+        "data": { "title": "Fare buckets", "items": ["Bucket Q", "Bucket H", "Bucket M", "...and more"] } },
+      { "scene": "bars", "text": "Each bucket holds a limited number of seats, and the cheapest bucket sells first.",
+        "data": { "title": "Illustrative example", "items": [ { "label": "Q", "value": 40, "tag": "$250" }, { "label": "H", "value": 30, "tag": "$350" }, { "label": "M", "value": 20, "tag": "$475" } ] } },
+      { "scene": "steps", "text": "When a cheap bucket sells out, the next one opens at a higher price.",
+        "data": { "title": "Sold out, next one opens", "items": ["$250 sold out", "$350 opens", "$475 next"] } },
+      { "scene": "text", "text": "What triggers it isn't who's shopping. It's how fast the flight is filling, plus demand forecasts and competitors' prices.",
+        "data": { "lines": ["Booking pace", "Demand forecasts", "Competitor prices"] } },
+      { "scene": "text", "text": "And it can go the other way. If a flight sells slowly, cheaper buckets can reopen.",
+        "data": { "lines": ["Slow sales", "Cheaper bucket reopens"] } },
+      { "scene": "payoff", "text": "That's the mechanism. The same seat, sold at the price of the moment.",
+        "data": { "line1": "One seat.", "line2": "Many prices." } }
+    ]
+  },
+  {
+    "id": "movie-popcorn",
+    "title": "Why movie popcorn costs so much",
+    "template": "generic",
+    "status": "script-ready",
+    "beats": [
+      { "scene": "text", "text": "A movie ticket isn't where the cinema makes its money.",
+        "data": { "lines": ["The ticket", "isn't the profit."] } },
+      { "scene": "split", "text": "Studios can take most of the ticket price. One industry veteran says as much as seventy percent.",
+        "data": { "title": "Ticket price (illustrative split)", "parts": [ { "label": "Studio", "pct": 70 }, { "label": "Cinema", "pct": 30 } ], "note": "Up to ~70%, varies over a film's run" } },
+      { "scene": "text", "text": "But the cinema keeps every cent you spend at the snack counter.",
+        "data": { "lines": ["Tickets: shared", "Snacks: all theirs"] } },
+      { "scene": "bars", "text": "By commonly cited estimates, snacks are about a fifth of a theater's revenue, yet around forty percent of its profit.",
+        "data": { "title": "Snacks, commonly cited estimates", "items": [ { "label": "Revenue", "value": 20, "tag": "~20%" }, { "label": "Profit", "value": 40, "tag": "~40%" } ] } },
+      { "scene": "bignumber", "text": "Meanwhile, one older estimate puts a theater's overall profit margin at just four percent.",
+        "data": { "value": "~4%", "label": "Average theater profit margin", "sub": "older industry estimate" } },
+      { "scene": "text", "text": "So pricey popcorn isn't random. It's where the business earns its keep.",
+        "data": { "lines": ["Not random.", "Where the money is."] } },
+      { "scene": "payoff", "text": "That's the mechanism. The ticket gets you in. The popcorn pays the bills.",
+        "data": { "line1": "Ticket gets you in.", "line2": "Popcorn pays the bills." } }
+    ]
+  },
+  {
+    "id": "decoy-effect",
+    "title": "Why the medium size exists",
+    "template": "generic",
+    "status": "script-ready",
+    "beats": [
+      { "scene": "text", "text": "Why does the medium popcorn cost almost as much as the large?",
+        "data": { "lines": ["Medium.", "Almost the price", "of large."] } },
+      { "scene": "options", "text": "Say a cinema sells a small for three dollars and a large for seven.",
+        "data": { "title": "Illustrative prices", "items": [ { "label": "Small", "price": "$3" }, { "label": "Large", "price": "$7" } ] } },
+      { "scene": "options", "text": "Then it adds a medium at six fifty. Nobody is really meant to buy it.",
+        "data": { "title": "Illustrative prices", "items": [ { "label": "Small", "price": "$3" }, { "label": "Medium", "price": "$6.50", "dim": true }, { "label": "Large", "price": "$7" } ] } },
+      { "scene": "options", "text": "But next to that medium, the large suddenly looks like a bargain.",
+        "data": { "title": "Illustrative prices", "items": [ { "label": "Small", "price": "$3" }, { "label": "Medium", "price": "$6.50", "dim": true }, { "label": "Large", "price": "$7", "highlight": true } ] } },
+      { "scene": "text", "text": "Psychologists call it the decoy effect: a third option that's worse than one choice, and only partly worse than the other.",
+        "data": { "lines": ["The decoy effect"] } },
+      { "scene": "text", "text": "It's not magic, though. Research suggests it works under specific conditions, like when the options are close in value.",
+        "data": { "lines": ["Works under", "specific conditions"] } },
+      { "scene": "payoff", "text": "That's the mechanism. An option designed to be ignored, so another one gets picked.",
+        "data": { "line1": "Built to be ignored.", "line2": "So another gets picked." } }
+    ]
+  },
+  {
+    "id": "price-ending-99",
+    "title": "Why prices end in .99",
+    "template": "generic",
+    "status": "script-ready",
+    "beats": [
+      { "scene": "text", "text": "Why does everything cost ninety-nine cents instead of a round number?",
+        "data": { "lines": ["Why .99?"] } },
+      { "scene": "compare", "text": "Two ninety-nine and three dollars are only one cent apart. Your brain doesn't see it that way.",
+        "data": { "left": { "label": "Price A", "value": "$2.99" }, "right": { "label": "Price B", "value": "$3.00" }, "note": "1 cent apart" } },
+      { "scene": "text", "text": "Researchers call it the left-digit effect. The first digit changes, so the price feels like a different category.",
+        "data": { "lines": ["2.99 = \"a two-something\"", "3.00 = \"a three-something\""] } },
+      { "scene": "text", "text": "A study by New York University researchers found the effect is stronger when the nine changes that first digit.",
+        "data": { "lines": ["NYU study, 2005", "Stronger when the", "first digit changes"] } },
+      { "scene": "text", "text": "It also gets stronger when the price sits close to a comparison price, like a sale next to a regular price.",
+        "data": { "lines": ["Sale price next to", "the regular price"] } },
+      { "scene": "text", "text": "It doesn't work every time. But often enough that retailers keep using it.",
+        "data": { "lines": ["Not every time.", "Often enough."] } },
+      { "scene": "payoff", "text": "That's the mechanism: a one-cent change that your brain treats as a bigger one.",
+        "data": { "line1": "One cent.", "line2": "Feels bigger." } }
+    ]
+  },
+  {
+    "id": "airline-bag-fees",
+    "title": "Why airlines charge for bags",
+    "template": "generic",
+    "status": "script-ready",
+    "beats": [
+      { "scene": "text", "text": "Airlines didn't always charge you to check a bag.",
+        "data": { "lines": ["Bags used to be", "included."] } },
+      { "scene": "steps", "text": "In two thousand eight, many US airlines began charging for bags, then for reservation changes, priority boarding, and more.",
+        "data": { "title": "From 2008", "items": ["Checked bags", "Reservation changes", "Priority boarding", "More extras"] } },
+      { "scene": "text", "text": "Researchers describe it as a way to charge different customers different prices, born from revenue pressure in the two thousands.",
+        "data": { "lines": ["Different customers,", "different prices"] } },
+      { "scene": "bignumber", "text": "By two thousand sixteen, US airlines collected about seven billion dollars a year from just bag and change fees, according to the Government Accountability Office.",
+        "data": { "value": "$7.1B", "label": "Bag + change fees, US airlines", "sub": "Year to Sept 2016 (GAO)" } },
+      { "scene": "text", "text": "The catch: the ticket price no longer shows the full cost. Consumer advocates say that makes airlines harder to compare.",
+        "data": { "lines": ["Ticket price", "≠ full cost"] } },
+      { "scene": "payoff", "text": "That's the mechanism. Split the trip into pieces, and charge for the pieces.",
+        "data": { "line1": "Split it into pieces.", "line2": "Charge for the pieces." } }
+    ]
+  },
+  {
+    "id": "costco-hot-dog",
+    "title": "Why Costco never raises its hot dog price",
+    "template": "generic",
+    "status": "script-ready",
+    "beats": [
+      { "scene": "bignumber", "text": "Costco has charged one dollar fifty for its hot dog combo since nineteen eighty-five.",
+        "data": { "value": "$1.50", "label": "Costco hot dog combo", "sub": "since 1985" } },
+      { "scene": "text", "text": "Not a cent more, for decades. And the company's chief financial officer has publicly said the price is safe.",
+        "data": { "lines": ["CFO: the price", "is \"safe.\""] } },
+      { "scene": "text", "text": "It's widely described as a loss leader: a cheap item meant to pull people in. Costco hasn't said it loses money on it.",
+        "data": { "lines": ["\"Loss leader\"", "widely said,", "not confirmed by Costco"] } },
+      { "scene": "text", "text": "Employees have described it as a perk for members, and a pleasant last stop before checkout.",
+        "data": { "lines": ["A perk for members", "A pleasant last stop"] } },
+      { "scene": "text", "text": "And in Costco's member magazine, an executive wrote that the price shows a company can earn a fair markup and still pay its bills.",
+        "data": { "lines": ["Fair markup,", "bills still paid"] } },
+      { "scene": "text", "text": "Either way, a price that never changes becomes a signal. It tells you what kind of store this is.",
+        "data": { "lines": ["A price that never", "changes is a signal."] } },
+      { "scene": "payoff", "text": "That's the mechanism. A promise you can taste, for a dollar fifty.",
+        "data": { "line1": "A promise", "line2": "for $1.50." } }
+    ]
+  },
+  {
+    "id": "free-trial-card",
+    "title": "Why free trials ask for your card",
+    "template": "generic",
+    "status": "script-ready",
+    "beats": [
+      { "scene": "text", "text": "Why does a free trial ask for your credit card?",
+        "data": { "lines": ["Free trial.", "But why the card?"] } },
+      { "scene": "bars", "text": "In one older study, two percent of visitors started a trial that needed a card. Ten percent started one that didn't.",
+        "data": { "title": "Visitors who start a trial (2012 study)", "items": [ { "label": "Card needed", "value": 2, "tag": "~2%" }, { "label": "No card", "value": 10, "tag": "~10%" } ] } },
+      { "scene": "bignumber", "text": "But those who did start were far likelier to pay. A newer analysis of two hundred business software products found about thirty percent of card-required trials turned into paying customers, over five times the rate without a card.",
+        "data": { "value": "~30%", "label": "Card-required trials that converted", "sub": "200 B2B software products, 2026 analysis" } },
+      { "scene": "text", "text": "The card works as a filter. It keeps casual browsers out, and leaves people already leaning toward buying.",
+        "data": { "lines": ["A filter for intent"] } },
+      { "scene": "text", "text": "There's a trade-off, though. One study found card-required trials had lower end-to-end conversion, because so few people got started.",
+        "data": { "lines": ["Trade-off:", "fewer start at all"] } },
+      { "scene": "payoff", "text": "That's the mechanism. Fewer people start, but the ones who do are far more likely to pay.",
+        "data": { "line1": "Fewer start.", "line2": "More of them pay." } }
     ]
   }
 ]
